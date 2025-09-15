@@ -41,33 +41,34 @@
             padding: 0 20px;
         }
         
-        /* Header & Navigation */
+        /* REVISI: HEADER DIPADATKAN */
         header {
             background-color: var(--primary-color);
             color: var(--text-light);
-            padding: 15px 0;
+            padding: 10px 0; /* Padding diperkecil */
             text-align: center;
             border-bottom: 3px solid var(--accent-color);
         }
         header .logo {
-            width: 110px;
+            width: 100px; /* Logo diperkecil dari 120px */
             margin-bottom: 5px;
         }
         header h1 {
-            font-size: 2.2em;
+            font-size: 2em; /* Ukuran judul disesuaikan */
             margin: 0;
             font-weight: 700;
             letter-spacing: 1px;
         }
         header p {
-            font-size: 1em;
+            font-size: 0.9em; /* Ukuran sub-judul disesuaikan */
             margin: 0;
             opacity: 0.9;
         }
-        /* REVISI: NAVIGASI DIPERKECIL */
+        
+        /* REVISI: NAVIGASI DIPERKECIL & DIRAMPINGKAN */
         nav {
             background-color: var(--secondary-color);
-            padding: 12px 0; /* padding vertikal diperkecil dari 15px */
+            padding: 10px 0; /* Padding vertikal diperkecil lagi */
             text-align: center;
             position: sticky;
             top: 0;
@@ -79,7 +80,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: 600;
-            font-size: 0.95em; /* Font sedikit diperkecil agar pas */
+            font-size: 0.9em; /* Font diperkecil lagi agar ramping */
             transition: color 0.3s ease;
             position: relative;
             padding-bottom: 5px;
@@ -261,7 +262,7 @@
             flex-wrap: wrap;
         }
 
-        /* REVISI: FLOATING WHATSAPP BUTTON */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -322,7 +323,6 @@
         @media (max-width: 768px) {
             header h1 { font-size: 2em; }
             .hero { min-height: 60vh; padding: 60px 20px;}
-            nav { padding: 10px 0; }
             nav a { margin: 0 8px; font-size: 0.85em;}
             .section { padding: 60px 20px;}
             .section h3 { font-size: 2.2em; }
@@ -451,9 +451,9 @@
         </div>
     </section>
     
-    <!-- REVISI: INI TOMBOL WHATSAPP FLOATING BARU -->
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/6285964255704" class="whatsapp-float" target="_blank" aria-label="Chat di WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.2-27.2l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.2-27.2l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="white"/></svg>
     </a>
 
     <footer>
@@ -467,14 +467,11 @@
         // JavaScript for the Canvas Animation
         window.onload = function() {
             const canvas = document.getElementById('hero-canvas');
-            if (!canvas) {
-                console.error("Canvas element not found");
-                return;
-            }
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
 
             let particles = [];
-            const particleCount = 70; // Jumlah partikel
+            const particleCount = 70;
 
             function resizeCanvas() {
                 canvas.width = canvas.offsetWidth;
@@ -488,16 +485,14 @@
                 constructor() {
                     this.x = Math.random() * canvas.width;
                     this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 2 + 0.5; // Ukuran partikel
-                    this.speedX = (Math.random() * 0.5 - 0.25); // Gerak horizontal
-                    this.speedY = (Math.random() * 0.5 - 0.25) - 0.5; // Gerak vertikal (selalu ke atas)
-                    this.color = `rgba(255, 220, 150, ${Math.random() * 0.5 + 0.2})`; // Warna bara api
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = (Math.random() * 0.5 - 0.25);
+                    this.speedY = (Math.random() * 0.5 - 0.25) - 0.5;
+                    this.color = `rgba(255, 220, 150, ${Math.random() * 0.5 + 0.2})`;
                 }
-
                 update() {
                     this.x += this.speedX;
                     this.y += this.speedY;
-
                     if (this.y < 0) {
                         this.y = canvas.height;
                         this.x = Math.random() * canvas.width;
@@ -507,7 +502,6 @@
                         this.y = canvas.height;
                     }
                 }
-
                 draw() {
                     ctx.fillStyle = this.color;
                     ctx.beginPath();
@@ -540,7 +534,7 @@
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = {
             threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px" // Elemen akan muncul sedikit lebih awal
+            rootMargin: "0px 0px -50px 0px"
         };
         const appearOnScroll = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
