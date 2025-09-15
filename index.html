@@ -3,74 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atu Dua Iga - Iga Bakar Mantap Jiwa!</title>
-    <meta name="description" content="Atu Dua Iga: Iga Sapi Australia 100% Halal dengan rasa bikin nagih! Ada di Kelapa Gading & Serpong. Cocok buat nongkrong dan makan enak!">
+    <title>Atu Dua Iga - Spesialis Iga Bakar Australia</title>
+    <meta name="description" content="Atu Dua Iga: Nikmati sensasi iga bakar premium dari 100% Australian Beef. Hadir di Kelapa Gading & Serpong.">
     
     <style>
+        /* Mengimpor font dari Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-        /* General Styling */
+        /* CSS Variables untuk kemudahan kustomisasi warna */
+        :root {
+            --primary-color: #8B1A1A;
+            --secondary-color: #A32A2A;
+            --accent-color: #FFD700;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #F8F4F2;
+            --bg-dark: #2c2c2c;
+        }
+
+        /* INI UNTUK SMOOTH SCROLL */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F8F4F2;
-            color: #333;
-            scroll-behavior: smooth;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
-        /* Header and Navigation */
+        /* Header & Navigation */
         header {
-            background-color: #8B1A1A;
-            color: #fff;
-            padding: 20px 0;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 0;
             text-align: center;
+            border-bottom: 3px solid var(--accent-color);
         }
         header .logo {
             width: 120px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             margin: 0;
             font-weight: 700;
+            letter-spacing: 1px;
         }
         header p {
-            font-size: 1.1em;
-            margin: 5px 0 0;
+            font-size: 1em;
+            margin: 0;
+            opacity: 0.9;
         }
         nav {
-            background-color: #A32A2A;
+            background-color: var(--secondary-color);
             padding: 15px 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         nav a {
-            color: #fff;
+            color: var(--text-light);
             text-decoration: none;
             margin: 0 15px;
             font-weight: 600;
             transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
         }
-        nav a:hover {
-            color: #FFD700;
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--accent-color);
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+        nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section with Canvas */
         .hero {
-            position: relative; 
+            position: relative;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: url('image_b01fc0.jpg') no-repeat center center/cover;
             color: #fff;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
         }
         #hero-canvas {
             position: absolute;
@@ -79,48 +116,69 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            background: linear-gradient(rgba(40,10,10,0.7), rgba(0,0,0,0.9));
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8));
         }
         .hero-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
         }
         .hero h2 {
-            font-size: 3em;
+            font-size: clamp(2.5rem, 5vw, 4rem); /* Font size responsif */
             margin-bottom: 15px;
             font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
         .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
         .button {
-            background-color: #FFD700;
-            color: #8B1A1A;
-            padding: 12px 30px;
-            border-radius: 8px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 14px 35px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1em;
             transition: background-color 0.3s ease, transform 0.2s ease;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .button:hover {
-            background-color: #FFA500;
-            transform: scale(1.05);
+            background-color: #ffc400;
+            transform: translateY(-3px) scale(1.05);
+        }
+        .button.secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid var(--accent-color);
+        }
+        .button.secondary:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
         }
 
-        /* Sections and Cards */
+        /* General Section Styling */
         .section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
         .section h3 {
             font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #8B1A1A;
+            margin-bottom: 15px;
+            color: var(--primary-color);
             font-weight: 700;
         }
+        .section .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* About Section */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -128,29 +186,35 @@
         }
         .card {
             background-color: #fff;
-            padding: 25px;
+            padding: 0;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: left;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         .card img {
             width: 100%;
             height: 220px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
+        }
+        .card-content {
+            padding: 25px;
         }
         .card h4 {
             font-size: 1.5em;
+            margin-top: 0;
             margin-bottom: 10px;
-            color: #A32A2A;
+            color: var(--secondary-color);
             font-weight: 600;
         }
         .card p {
-            line-height: 1.6;
-            flex-grow: 1;
+            line-height: 1.7;
+            color: #555;
         }
 
         /* Menu Section */
@@ -161,11 +225,11 @@
             width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border: 1px solid #eee;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 10px 0;
         }
         
-        /* Location and Footer */
+        /* Location Section */
         .location-map {
             width: 100%;
             height: 300px;
@@ -173,121 +237,173 @@
             border-radius: 10px;
             margin-top: 15px;
         }
+
+        /* Call-to-Action / Reservasi Section */
+        #reservasi {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        #reservasi h3 {
+            color: var(--text-light);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        #reservasi .subtitle {
+            color: #eee;
+        }
+        .cta-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: var(--bg-dark);
+            color: #aaa;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 0.9em;
         }
         footer a {
-            color: #FFD700;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* INI UNTUK ANIMASI FADE-IN SAAT SCROLL */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             header h1 { font-size: 2em; }
-            .hero h2 { font-size: 2.2em; }
+            .hero { min-height: 60vh; padding: 60px 20px;}
             nav a { margin: 0 10px; font-size: 0.9em;}
+            .section { padding: 60px 20px;}
+            .section h3 { font-size: 2.2em; }
         }
-
     </style>
 </head>
 <body>
 
     <header>
-        <img src="image_afb203.png" alt="Atu Dua Iga Logo" class="logo">
-        <h1>ATU DUA IGA</h1>
-        <p>SAPI SEMUANYA</p>
-        <p>100% Australian Beef Ribs • HALAL ID 311110024655710725</p>
+        <div class="container">
+            <img src="image_afb203.png" alt="Logo Atu Dua Iga" class="logo">
+            <h1>ATU DUA IGA</h1>
+            <p>100% Australian Beef Ribs</p>
+        </div>
     </header>
 
     <nav>
-        <a href="#about">Tentang Kami</a>
-        <a href="#menu">Menu Juara</a>
-        <a href="#lokasi">Lokasi Kami</a>
-        <a href="#reservasi">Reservasi</a>
+        <a href="#about">Cerita Kami</a>
+        <a href="#menu">Lihat Menu</a>
+        <a href="#lokasi">Cari Kami</a>
+        <a href="#reservasi">Booking Meja</a>
     </nav>
 
     <section id="hero" class="hero">
         <canvas id="hero-canvas"></canvas>
-        <div class="hero-content">
-            <h2>Iga Bakar Mantap Jiwa, Bikin Nagih Terus!</h2>
-            <p>Pengalaman kuliner iga sapi premium yang bakal bikin kamu balik lagi.<br>Yuk, cobain iga bakar Australia 100% Halal kami!</p>
-            <a href="#menu" class="button">Lihat Menu Dulu</a>
+        <div class="hero-content fade-in">
+            <h2>Iga Bakar yang Bikin Balik Lagi.</h2>
+            <p>Dagingnya empuk, bumbunya meresap. Cuma pakai 100% Iga Sapi Australia pilihan. Penasaran?</p>
+            <a href="#menu" class="button">Intip Menunya, Yuk!</a>
         </div>
     </section>
 
     <section id="about" class="section">
         <div class="container">
-            <h3>Kenapa Atu Dua Iga?</h3>
+            <h3 class="fade-in">Kenapa Kamu Harus Coba?</h3>
+            <p class="subtitle fade-in">Tiga hal yang bikin Atu Dua Iga selalu jadi pilihan.</p>
             <div class="grid-3">
-                <div class="card">
+                <div class="card fade-in">
                     <img src="image_afaf3f.jpg" alt="Iga Bakar Premium">
-                    <h4>Iga Sapi Terbaik</h4>
-                    <p>Kami cuma pakai Iga Sapi Australia 100% pilihan yang bikin rasanya beda dan nagih. Dijamin empuk dan bikin lidah bergoyang!</p>
+                    <div class="card-content">
+                        <h4>Iga Australia Pilihan</h4>
+                        <p>Bukan iga biasa. Kami pilih langsung daging Australia kualitas premium biar tiap gigitan super empuk.</p>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <img src="image_b01fbc.jpg" alt="Bumbu Rahasia Atu Dua Iga">
-                    <h4>Bumbu Resep Rahasia</h4>
-                    <p>Racikan bumbu tradisional yang turun-temurun, bikin setiap gigitan iga kami punya cita rasa khas yang autentik dan kaya rempah.</p>
+                    <div class="card-content">
+                        <h4>Bumbu Khas Racikan Sendiri</h4>
+                        <p>Bumbu rahasia yang diwariskan turun-temurun. Rasanya? Khas, medok, dan pastinya beda dari yang lain.</p>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <img src="image_afaf58.jpg" alt="Suasana Atu Dua Iga">
-                    <h4>Tempat Nongkrong Asyik</h4>
-                    <p>Datang bareng teman atau keluarga, suasana kami pas banget buat ngumpul santai sambil nikmatin iga bakar terlezat!</p>
+                    <div class="card-content">
+                        <h4>Tempatnya Asyik Buat Ngumpul</h4>
+                        <p>Mau makan bareng temen, keluarga, atau si dia? Tempat kami nyaman dan pas buat bikin momen jadi seru.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="menu" class="menu-section">
+    <section id="menu" class="menu-section section">
         <div class="container">
-            <h3>Menu Juara Atu Dua Iga</h3>
-            <p style="max-width: 800px; margin: -20px auto 30px auto;">Siap-siap ngiler! Ini dia menu-menu andalan kami yang wajib kamu coba:</p>
+            <h3 class="fade-in">Pilih Jagoanmu</h3>
+            <p class="subtitle fade-in">Semua menu kami dijamin Halal (ID 311110024655710725). Tinggal tunjuk, pesan, dan siap-siap ketagihan.</p>
             <div class="grid-3">
-                 <img src="image_afaf5b.png" alt="Menu Iga Gemoy dan Paket Gemay" class="menu-image">
-                 <img src="image_afaf5e.png" alt="Menu Ala Carte dan Bristeak" class="menu-image">
-                 <img src="image_afaf60.png" alt="Menu Mains dan Saus" class="menu-image">
+                 <img src="image_afaf5b.png" alt="Menu Iga Gemoy dan Paket Gemay" class="menu-image fade-in">
+                 <img src="image_afaf5e.png" alt="Menu Ala Carte dan Bristeak" class="menu-image fade-in">
+                 <img src="image_afaf60.png" alt="Menu Mains dan Saus" class="menu-image fade-in">
             </div>
         </div>
     </section>
 
     <section id="lokasi" class="section">
         <div class="container">
-            <h3>Lokasi Kami</h3>
-            <p>Gak perlu nyasar, Atu Dua Iga siap menyambutmu di:</p>
+            <h3 class="fade-in">Mampir, Yuk!</h3>
+            <p class="subtitle fade-in">Lagi di Kelapa Gading atau Serpong? Langsung aja dateng. Kami buka setiap hari!</p>
             <div class="grid-3">
-                <div class="card">
-                    <h4>📍 Kelapa Gading</h4>
-                    <p>Jalan Hibrida Raya Blok RB 1 No. 17 (Sebelah Bakmi Kofei), Jakarta Utara</p>
+                <div class="card fade-in">
+                    <div class="card-content">
+                        <h4>📍 Kelapa Gading</h4>
+                        <p>Jalan Hibrida Raya Blok RB 1 No. 17 (Sebelah Bakmi Kofei), Jakarta Utara</p>
+                    </div>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.822944065661!2d106.90906387588385!3d-6.154388160273769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f54117539661%3A0x868c688321034c26!2sAtu%20Dua%20Iga!5e0!3m2!1sen!2sid!4v1726413247481!5m2!1sen!2sid" class="location-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="card">
-                    <h4>📍 Serpong (Soon!)</h4>
-                    <p>Cabang kedua kami siap melayani kamu para pencinta iga di area Serpong! Info detail alamat akan segera kami update ya!</p>
-                     <img src="image_b01fdb.jpg" alt="Cabang Serpong Atu Dua Iga">
+                <div class="card fade-in">
+                    <img src="image_b01fdb.jpg" alt="Cabang Serpong Atu Dua Iga">
+                    <div class="card-content">
+                        <h4>📍 Serpong (Segera Hadir!)</h4>
+                        <p>Nantikan kehadiran kami di Serpong! Ikuti Instagram kami untuk dapat info paling update.</p>
+                    </div>
                 </div>
-                 <div class="card">
-                    <h4>Jam Buka</h4>
-                    <p style="font-size: 1.5em; font-weight: 600; color: #8B1A1A;">Buka Setiap Hari!</p>
-                    <p style="font-size: 1.8em; font-weight: 700;">11.00 - 23.00</p>
-                    <p><small>(Last order)</small></p>
-                    <p>Jadi, kapan nih kita ketemu di Atu Dua Iga?</p>
+                 <div class="card fade-in">
+                    <img src="image_afaf58.jpg" alt="Suasana Restoran">
+                     <div class="card-content">
+                        <h4>Jam Buka</h4>
+                        <p style="font-size: 1.5em; font-weight: 600; color: #8B1A1A; margin:0;">Setiap Hari</p>
+                        <p style="font-size: 1.8em; font-weight: 700; margin:0;">11.00 - 23.00</p>
+                        <p style="margin-top:5px;"><small>(Last order pukul 22.30)</small></p>
+                        <p>Kami tungguin, ya!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="reservasi" class="section" style="background-color: #fff;">
+    <section id="reservasi" class="section">
         <div class="container">
-            <h3>Reservasi Gampang, Biar Gak Kehabisan Tempat!</h3>
-            <p>Mau rayain ultah, meeting santai, atau sekadar makan malam bareng doi? Yuk, booking tempatmu sekarang biar gak antri lama!</p>
-            <div class="contact-info">
-                <p>Langsung chat admin kami via WhatsApp atau kepoin Instagram kita!</p>
+            <h3 class="fade-in">Gak Mau Antre? Booking Aja!</h3>
+            <p class="subtitle fade-in">Biar pas dateng, meja udah siap. Langsung chat kami di WhatsApp atau kepoin IG kami buat promo terbaru.</p>
+            <div class="cta-buttons fade-in">
                 <a href="https://wa.me/6285964255704" class="button" target="_blank">Booking via WhatsApp</a>
+                <a href="https://www.instagram.com/atuduaigasapi/" class="button secondary" target="_blank">Kepo-in Instagram</a>
             </div>
         </div>
     </section>
@@ -295,7 +411,7 @@
     <footer>
         <div class="container">
             <p>© 2025 Atu Dua Iga. All Rights Reserved.</p>
-            <p>Follow kita di Instagram <a href="https://www.instagram.com/atuduaigasapi/" target="_blank">@atuduaigasapi</a></p>
+            <p>Kepoin kami di Instagram <a href="https://www.instagram.com/atuduaigasapi/" target="_blank">@atuduaigasapi</a></p>
         </div>
     </footer>
 
@@ -371,6 +487,29 @@
             resizeCanvas(); 
             animate(); 
         };
+
+        // JavaScript for Fade-in Animation on Scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px" // Elemen akan muncul sedikit lebih awal
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
     </script>
 </body>
 </html>
+
