@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atu Dua Iga - Iga Bakar Mantap Jiwa!</title>
+    <meta name="description" content="Atu Dua Iga: Iga Sapi Australia 100% Halal dengan rasa bikin nagih! Ada di Kelapa Gading & Serpong. Cocok buat nongkrong dan makan enak!">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F4F2;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header and Navigation */
+        header {
+            background-color: #8B1A1A;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header .logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.1em;
+            margin: 5px 0 0;
+        }
+        nav {
+            background-color: #A32A2A;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        /* Hero Section with Canvas */
+        .hero {
+            position: relative; 
+            text-align: center;
+            padding: 80px 20px;
+            background: url('image_b01fc0.jpg') no-repeat center center/cover;
+            color: #fff;
+            overflow: hidden;
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(rgba(40,10,10,0.7), rgba(0,0,0,0.9));
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Ensure content is above canvas */
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        .button {
+            background-color: #FFD700;
+            color: #8B1A1A;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #FFA500;
+            transform: scale(1.05);
+        }
+
+        /* Sections and Cards */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h3 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #8B1A1A;
+            font-weight: 700;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .card h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #A32A2A;
+            font-weight: 600;
+        }
+        .card p {
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background-color: #fff;
+        }
+        .menu-image {
+            width: 100%;
+            max-width: 400px; 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: auto;
+        }
+        
+        /* Location and Footer */
+        .location-map {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .hero h2 { font-size: 2.2em; }
+            nav a { margin: 0 10px; font-size: 0.9em;}
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="image_afb203.png" alt="Atu Dua Iga Logo" class="logo">
+        <h1>ATU DUA IGA</h1>
+        <p>SAPI SEMUANYA</p>
+        <p>100% Australian Beef Ribs • HALAL ID 311110024655710725</p>
+    </header>
+
+    <nav>
+        <a href="#about">Tentang Kami</a>
+        <a href="#menu">Menu Juara</a>
+        <a href="#lokasi">Lokasi Kami</a>
+        <a href="#reservasi">Reservasi</a>
+    </nav>
+
+    <section id="hero" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h2>Iga Bakar Mantap Jiwa, Bikin Nagih Terus!</h2>
+            <p>Pengalaman kuliner iga sapi premium yang bakal bikin kamu balik lagi.<br>Yuk, cobain iga bakar Australia 100% Halal kami!</p>
+            <a href="#menu" class="button">Lihat Menu Dulu</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h3>Kenapa Atu Dua Iga?</h3>
+            <div class="grid-3">
+                <div class="card">
+                    <img src="image_afaf3f.jpg" alt="Iga Bakar Premium">
+                    <h4>Iga Sapi Terbaik</h4>
+                    <p>Kami cuma pakai Iga Sapi Australia 100% pilihan yang bikin rasanya beda dan nagih. Dijamin empuk dan bikin lidah bergoyang!</p>
+                </div>
+                <div class="card">
+                    <img src="image_b01fbc.jpg" alt="Bumbu Rahasia Atu Dua Iga">
+                    <h4>Bumbu Resep Rahasia</h4>
+                    <p>Racikan bumbu tradisional yang turun-temurun, bikin setiap gigitan iga kami punya cita rasa khas yang autentik dan kaya rempah.</p>
+                </div>
+                <div class="card">
+                    <img src="image_afaf58.jpg" alt="Suasana Atu Dua Iga">
+                    <h4>Tempat Nongkrong Asyik</h4>
+                    <p>Datang bareng teman atau keluarga, suasana kami pas banget buat ngumpul santai sambil nikmatin iga bakar terlezat!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h3>Menu Juara Atu Dua Iga</h3>
+            <p style="max-width: 800px; margin: -20px auto 40px auto;">Siap-siap ngiler! Ini dia menu-menu andalan kami yang wajib kamu coba:</p>
+
+            <div class="grid-3">
+                <img src="image_b01fa0.jpg" alt="Menu Iga Gemoy dan Paket Gemay" class="menu-image">
+                <img src="image_b01f9d.jpg" alt="Menu Ala Carte dan Bristeak" class="menu-image">
+                <img src="image_b01f98.jpg" alt="Menu Mains dan Saus" class="menu-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="lokasi" class="section">
+        <div class="container">
+            <h3>Lokasi Kami</h3>
+            <p>Gak perlu nyasar, Atu Dua Iga siap menyambutmu di:</p>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>📍 Kelapa Gading</h4>
+                    <p>Jalan Hibrida Raya Blok RB 1 No. 17 (Sebelah Bakmi Kofei), Jakarta Utara</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.903901625906!2d106.9079549749179!3d-6.141565993845943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f52f3d5a4985%3A0x6a2c2709e99a80e0!2sAtu%20Dua%20Iga%20Bakar%20Kelapa%20Gading!5e0!3m2!1sen!2sid!4v1701389476230!5m2!1sen!2sid" class="location-map" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="card">
+                    <h4>📍 Serpong</h4>
+                    <p>Cabang kedua kami siap melayani kamu para pencinta iga di area Serpong! Info detail alamat akan segera kami update ya!</p>
+                     <img src="image_b01fdb.jpg" alt="Cabang Serpong Atu Dua Iga">
+                </div>
+                 <div class="card">
+                    <h4>Jam Buka</h4>
+                    <p style="font-size: 1.5em; font-weight: 600; color: #8B1A1A;">Buka Setiap Hari!</p>
+                    <p style="font-size: 1.8em; font-weight: 700;">11.00 - 23.00</p>
+                    <p><small>(Last order)</small></p>
+                    <p>Jadi, kapan nih kita ketemu di Atu Dua Iga?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="reservasi" class="section" style="background-color: #fff;">
+        <div class="container">
+            <h3>Reservasi Gampang, Biar Gak Kehabisan Tempat!</h3>
+            <p>Mau rayain ultah, meeting santai, atau sekadar makan malam bareng doi? Yuk, booking tempatmu sekarang biar gak antri lama!</p>
+            <div class="contact-info">
+                <p>Langsung chat admin kami via WhatsApp atau kepoin Instagram kita!</p>
+                <a href="https://wa.me/6285964255704" class="button" target="_blank">Booking via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Atu Dua Iga. All Rights Reserved.</p>
+            <p>Follow kita di Instagram <a href="https://www.instagram.com/atuduaigasapi/" target="_blank">@atuduaigasapi</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for the Canvas Animation
+        window.onload = function() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) {
+                console.error("Canvas element not found");
+                return;
+            }
+            const ctx = canvas.getContext('2d');
+
+            let particles = [];
+            const particleCount = 70;
+
+            // Set canvas size based on its container
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                 // Re-initialize particles on resize to fit new dimensions
+                initParticles();
+            }
+            
+            window.addEventListener('resize', resizeCanvas);
+            
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = (Math.random() * 0.5 - 0.25);
+                    this.speedY = (Math.random() * 0.5 - 0.25) - 0.5; // Move upwards
+                    this.color = `rgba(255, 220, 150, ${Math.random() * 0.5 + 0.2})`;
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    if (this.y < 0) {
+                        this.y = canvas.height;
+                        this.x = Math.random() * canvas.width;
+                    }
+                     if (this.x < 0 || this.x > canvas.width) {
+                        this.x = Math.random() * canvas.width;
+                        this.y = canvas.height;
+                    }
+                }
+
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                requestAnimationFrame(animate);
+            }
+            
+            resizeCanvas(); // Initial setup
+            animate();
+        };
+    </script>
+</body>
+</html>
